@@ -2,7 +2,7 @@ MYSQL
 =====
 ## Mysql mas rapido
 ```
-#[mysqld]
+# [mysqld]
 key_buffer		= 32M
 max_allowed_packet	= 16M
 thread_stack		= 192K
