@@ -1,4 +1,4 @@
-MYSQL
+MYSQL y MARIADB
 ===
 ## Mysql mas rapido
 Para poder acelerar las consultas en mysql, se deve modificar el archivo my.cnf [/etc/mysql].
