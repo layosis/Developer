@@ -28,13 +28,13 @@ sudo apt install mariadb-server mariadb-client
 
 #### Entrar a la base de datos
 ```
-> mysql -u root
+> sudo mysql -u root
 ```
 ### 3.- Cambiando la Contraseña
 ```
-mysql> GRANT USAGE ON *.* TO 'root'@localhost IDENTIFIED BY 'mipassword';
-> FLUSH PRIVILEGES;
-> quit
+MariaDB [(none)]> GRANT USAGE ON *.* TO 'root'@localhost IDENTIFIED BY 'mipassword';
+MariaDB [(none)]> FLUSH PRIVILEGES;
+MariaDB [(none)]> quit
 ```
 ### 4.- Reiniciar la base de datos Normalmente
 #### [ Mysql ]
