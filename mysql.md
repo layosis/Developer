@@ -25,28 +25,15 @@ sudo apt install mariadb-server mariadb-client
 
 ## CAMBIAR LA CONTRASEÑA DEL ROOT
 ###  1.- Detener la base de datos
-#### [ Mysql ]
-```
-> sudo systemctl stop mysql
-```
-#### [ Mariadb ]
-```
-> sudo systemctl stop mariadb
-```
-### 2.- Reiniciar la base de datos sin permisos
-```
-> sudo mysqld_safe --skip-grant-tables --skip-networking &
-```
+
 #### Entrar a la base de datos
 ```
 > mysql -u root
 ```
 ### 3.- Cambiando la Contraseña
 ```
+mysql> GRANT USAGE ON *.* TO 'root'@localhost IDENTIFIED BY 'mipassword';
 > FLUSH PRIVILEGES;
-> ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
-o 
-> update user SET PASSWORD=PASSWORD("new_password") WHERE USER='root';
 > quit
 ```
 ### 4.- Reiniciar la base de datos Normalmente
