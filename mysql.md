@@ -45,6 +45,8 @@ sudo apt install mariadb-server mariadb-client
 ```
 > FLUSH PRIVILEGES;
 > ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
+o 
+> update user SET PASSWORD=PASSWORD("new_password") WHERE USER='root';
 > quit
 ```
 ### 4.- Reiniciar la base de datos Normalmente
