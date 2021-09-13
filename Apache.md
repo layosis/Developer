@@ -2,7 +2,7 @@ Configuraciones basicas del Servidor apache
 ===
 ## Instalar php-mcrypt en linux mint 20 php 7.4
 ```
-sudo apt-get install php7.4-dev libmcrypt-dev gcc make autoconf libc-dev pkg-config php-pear
+sudo apt-get install php7.4-dev libmcrypt-dev gcc make autoconf libc-dev pkg-config php-pear php7.4-xml
 sudo pecl channel-update pecl.php.net
 sudo pecl install mcrypt-1.0.3
 ```
