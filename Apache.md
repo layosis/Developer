@@ -64,7 +64,7 @@ xdebug.client_host = 127.0.0.1
     -> sudo openssl req -new -newkey rsa:4096 -x509 -sha256 -days 1925 -nodes -out apache-certificate.crt -keyout apache.key
 
 6.- Crear nuestro host virtual. (/etc/apache2/site_available)
-    -> sudo nano name_host.conf
+    > sudo nano name_host.conf
 
     <VirtualHost name_host.local:80>
         ServerName name_host.local
