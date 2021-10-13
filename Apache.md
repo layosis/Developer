@@ -39,10 +39,10 @@ xdebug.mode = debug
 xdebug.start_with_request = yes
 xdebug.client_port = 9000
 xdebug.client_host = 127.0.0.1
-
+```
 
 ## Activar https en local
-```bash
+
 1.- Instalar openssl
     -> sudo apt-get install openssl.
     -> sudo a2enmod ssl
