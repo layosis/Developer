@@ -40,7 +40,7 @@ xdebug.start_with_request = yes
 xdebug.client_port = 9000
 xdebug.client_host = 127.0.0.1
 
-```
+
 ## Activar https en local
 ```bash
 1.- Instalar openssl
@@ -64,8 +64,8 @@ xdebug.client_host = 127.0.0.1
     -> sudo openssl req -new -newkey rsa:4096 -x509 -sha256 -days 1925 -nodes -out apache-certificate.crt -keyout apache.key
 
 6.- Crear nuestro host virtual. (/etc/apache2/site_available)
-    > sudo nano name_host.conf
-
+    -> sudo nano name_host.conf
+~~~
     <VirtualHost name_host.local:80>
         ServerName name_host.local
         ServerAlias www.name_host.local
@@ -97,11 +97,11 @@ xdebug.client_host = 127.0.0.1
             SSLCertificateFile /etc/apache2/certificate/apache-certificate.crt
             SSLCertificateKeyFile /etc/apache2/certificate/apache.key
     </VirtualHost>
-
+~~~
 
 7.- Habilitar el host virtual
     -> sudo a2ensite name_host
 
 8.- Reiniciar el servidor apache
     -> sudo service apache2 restart
-```
+
