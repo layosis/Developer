@@ -44,9 +44,10 @@ xdebug.client_host = 127.0.0.1
 ## Activar https en local
 
 1.- Instalar openssl
+```
     -> sudo apt-get install openssl.
     -> sudo a2enmod ssl
-
+```
 2.- Habilitar rewrite
     -> sudo a2enmod rewrite
 
