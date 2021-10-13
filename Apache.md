@@ -43,29 +43,40 @@ xdebug.client_host = 127.0.0.1
 
 ## Activar https en local
 
-1.- Instalar openssl
+##### 1.- Instalar openssl
 ```
     -> sudo apt-get install openssl.
     -> sudo a2enmod ssl
 ```
-2.- Habilitar rewrite
+##### 2.- Habilitar rewrite
+```
     -> sudo a2enmod rewrite
+```
 
-3.- Modificar apache2.conf
+##### 3.- Modificar apache2.conf
+```
     -> Añadir este codigo al final del archivo
-    <Directory /LinuxDoc/html>
-        AllowOverride All
-    </Directory>
+        <Directory /LinuxDoc/html>
+            AllowOverride All
+        </Directory>
+```
 
-4.- Crear carpeta donde estara el certificado
+##### 4.- Crear carpeta donde estara el certificado
+```
     -> sudo mkdir /etc/apache2/certificate
     -> cd /etc/apache2/certificate
+```
 
-5.- Crear los Certificados con openssl.
+##### 5.- Crear los Certificados con openssl.
+```
     -> sudo openssl req -new -newkey rsa:4096 -x509 -sha256 -days 1925 -nodes -out apache-certificate.crt -keyout apache.key
+```
 
-6.- Crear nuestro host virtual. (/etc/apache2/site_available)
+##### 6.- Crear nuestro host virtual. (/etc/apache2/site_available)
+```
     -> sudo nano name_host.conf
+```
+
 ~~~
     <VirtualHost name_host.local:80>
         ServerName name_host.local
@@ -100,9 +111,13 @@ xdebug.client_host = 127.0.0.1
     </VirtualHost>
 ~~~
 
-7.- Habilitar el host virtual
+##### 7.- Habilitar el host virtual
+```
     -> sudo a2ensite name_host
+```
 
-8.- Reiniciar el servidor apache
+##### 8.- Reiniciar el servidor apache
+```
     -> sudo service apache2 restart
+```
 
