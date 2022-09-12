@@ -16,6 +16,15 @@ extension=mcrypt.so
 ```
 sudo systemctl restart apache2
 ```
+#### Cambiar ruta del host
+```bash
+1.- Modificar el archivo de configuracion: /etc/apache2/sites-available/000-default.conf.
+    linea:
+    DocumentRoot /LinuxDoc/html/
+2.-  Modificar el archivo de configuracion: /etc/apache2/apache.conf.
+    <Directory /var/www/html>  a <Directory /LinuxDoc/html>
+```
+
 ## Instalacion de Xdebug
 ```bash
 1.- sudo apt install php7.4-dev
