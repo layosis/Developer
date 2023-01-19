@@ -1,7 +1,7 @@
 Configuraciones basicas de Herramientas para el backed
 ===
 ## Instalar Composer 2
-
+````
 1. Nos colocamos en la raiz de nuestra instalación con el siguiente comando:
     -  cd ~
 2. Descargamos desde el repositorio el archivo de instalación:
@@ -10,4 +10,4 @@ Configuraciones basicas de Herramientas para el backed
       sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 4. Comprobamos que se ha instalado correctamente y que tiene la versión esperada:
       composer --version
-
+````
