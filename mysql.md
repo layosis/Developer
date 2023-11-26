@@ -5,11 +5,10 @@ Para poder acelerar las consultas en mysql, se deve modificar el archivo my.cnf 
 #### [mysqld]
 ```
 key_buffer		= 32M
-max_allowed_packet	= 16M
+max_allowed_packet = 512M
 thread_stack		= 192K
 thread_cache_size       = 8
 max_connections        = 50
-max_allowed_packet      = 512M
 table_cache            = 1024
 query_cache_limit	= 8M
 query_cache_size  = 16M
