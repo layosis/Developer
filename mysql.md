@@ -19,9 +19,11 @@ innodb_flush_log_at_trx_commit = 2
 
 MARIADB
 ===
-## Instalacion linux mint
 
-sudo apt install mariadb-server mariadb-client
+## Instalacion linux mint
+```
+> sudo apt install mariadb-server mariadb-client
+```
 
 ## CAMBIAR LA CONTRASEÑA DEL ROOT
 ###  1.- Detener la base de datos
@@ -51,4 +53,23 @@ MariaDB [(none)]> quit
 #### probar el ingreso a la BD
 ```
 > mysql -u root -p
+```
+
+## Crear usuario en mysql o mariadb
+
+### 1.- Creacion del usuario
+```
+mysql> CREATE USER 'miusuario'@localhost IDENTIFIED BY 'mipassword';
+```
+### 2.- Conceder permisos para poder acceder y usar el servidor MySQL
+```
+mysql> GRANT USAGE ON *.* TO 'miusuario'@localhost IDENTIFIED BY 'mipassword';
+```
+### 3.- Conceder todos los privilegios sobre la base de datos al usuario
+```
+mysql> GRANT ALL privileges ON `mibd`.* TO 'miusuario'@localhost IDENTIFIED BY 'mipassword';
+```
+### 3.- Aplicar los cambios
+```
+mysql> FLUSH PRIVILEGES;
 ```
