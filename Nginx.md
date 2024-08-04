@@ -42,20 +42,39 @@ server {
 > 1. Crear un archivo de configuración dentro la carpeta **/etc/nginx/sites-available/**. Con el siguiente contenido.
 ```
 server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
-	root /var/www/html;
-	index index.html index.htm index.nginx-debian.html;
-	server_name _;
-	location / {
-		try_files $uri $uri/ =404;
-	}
-    location ~ \.php$ {
+   listen 80;
+   listen [::]:80;
+
+   root /linuxdoc/html/laprensa/web;
+
+   index index.php index.html index.htm index.nginx-debian.html;
+
+   server_name laprensa.local www.laprensa.local;
+
+   location / {
+       root /var/www/html/laprensa/web;
+       if (!-e $request_filename) {
+         rewrite ^/(.*)$ /index.php?q=$1 last;
+       }
+       #try_files $uri $uri/ =404;
+   }
+
+   location ~ \.php$ {
        include snippets/fastcgi-php.conf;
        fastcgi_pass unix:/var/run/php/php8.3-fpm.sock;
        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
        include fastcgi_params;
-    }    
+   }
+   error_page 404 /404.html;
+   location = /404.html {
+       root /usr/share/nginx/html;
+       internal;
+   }
+   error_page 500 502 503 504 /50x.html;
+   location = /50x.html {
+       root /usr/share/nginx/html;
+       internal;
+   }
 }
 ```
 > 2. Crear un enlace simbolico al archivo creado dentro la carpeta **/etc/nginx/sites-enable/**.
