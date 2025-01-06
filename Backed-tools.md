@@ -11,7 +11,7 @@ Configuraciones basicas de Herramientas para el backed
       curl -sS https://getcomposer.org/installer -o composer-setup.php
 
 3. Para instalar composer globalmente, use el siguiente comando que descargará 
-   e instalará Composer como un comando de todo el sistema llamado composer, en / usr / local / bin:
+   e instalará Composer como un comando de todo el sistema llamado composer, en /usr/local/bin:
 
       sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
